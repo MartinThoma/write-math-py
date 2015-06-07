@@ -4,11 +4,20 @@ Pure Python implementation of the backend of write-math
 ## Docker
 
 ```bash
-$ sudo docker run -p 80:5000 --name 'REST-API' e56db1f4ca0d
+$ sudo docker run -t -p 8080:5000 --name writemath_api themoosemind/write-math-api
 ```
 
 where 80 is the target port on the host system and 5000 is the port in the
 container.
+
+### Basics
+
+Stop and remove all containers:
+
+```bash
+$ docker stop $(docker ps -a -q)
+$ docker rm $(docker ps -a -q)
+```
 
 
 ## Technology
