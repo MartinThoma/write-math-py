@@ -1,6 +1,16 @@
 # write-math-py
 Pure Python implementation of the backend of write-math
 
+## Docker
+
+```bash
+$ sudo docker run -p 80:5000 --name 'REST-API' e56db1f4ca0d
+```
+
+where 80 is the target port on the host system and 5000 is the port in the
+container.
+
+
 ## Technology
 
 * Flask
