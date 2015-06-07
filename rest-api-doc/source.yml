@@ -1,0 +1,216 @@
+configuration:
+  title: ApiDoc demo
+  description: A sample demo for ApiDoc
+  uri: http://api.write-math.com
+categories:
+  Users:
+    description: Manage user and authentication
+versions:
+  v1.0:
+    status: current
+    major: 1
+    minor: 0
+    methods:
+      RecordingCreate:
+        label: Create
+        method: POST
+        description: Create a new recording
+        uri: /{version}/recording
+        category: Recordings
+        request_parameters:
+          version:
+            type: Version
+            description: Api version
+            generic: true
+        request_body:
+          type: object
+          properties:
+            recording:
+              type: Recording
+        response_body:
+          type: object
+          properties:
+            User:
+              type: User
+      RecordingsList:
+        label: List
+        uri: /{version}/recordings
+        description: List recordings
+        category: Recordings
+        request_parameters:
+          version:
+            type: Version
+            description: Api version
+            generic: true
+        response_body:
+          type: object
+          properties:
+            Recordings:
+              type: array
+              items:
+                type: reference
+                reference: object_href
+      AddClassification:
+        label: ClassificationAdd
+        method: POST
+        description: Add a classification to a recording.
+        uri: /{version}/recordings/{recording_id}/classification
+        category: Recordings
+        request_parameters:
+          version:
+            type: Version
+            description: Api version
+            generic: true
+          recording_id:
+            type: integer
+            description: Recording identifier
+          access_token:
+            type: string
+            description: O-Auth access token which identifies and authenticates the user
+        request_body:
+          type: object
+          properties:
+            classification:
+              type: Classification
+              description: Classification which is to be added
+        response_body:
+          type: object
+          properties:
+            User:
+              type: User
+        response_codes:
+          - code: 404
+            message: User not found
+            description: Customer does not exists
+          - code: 403
+            message: Forbidden
+            description: User can not be adding to this customer
+      UsersList:
+        label: List
+        uri: /{version}/users
+        description: List users
+        category: Users
+        request_parameters:
+          version:
+            type: Version
+            description: Api version
+            generic: true
+        response_body:
+          type: object
+          properties:
+            Users:
+              type: array
+              items:
+                type: reference
+                reference: object_href
+      UserGet:
+        label: Get
+        description: Retrieve properties of a specific user
+        uri: /{version}/users/{user_id}
+        category: Users
+        request_parameters:
+          version:
+            type: Version
+            description: Api version
+            generic: true
+          user_id:
+            type: integer
+            description: user identifier
+        response_body:
+          type: object
+          properties:
+            User:
+              type: User
+        response_codes:
+          - code: 404
+            message: User not found
+            description: User does not exists
+
+    references:
+      object_href:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: Object identifier
+          name:
+            type: string
+            description: Name of the object
+
+    types:
+      Version:
+        description: A version
+        format:
+          pretty: VN.N
+          advanced: V\d+\.\d+
+        item:
+          type: string
+          sample: v1.0
+      Classification:
+        description: A classification for a given (part) of a recording.
+        item:
+          type: object
+          properties:
+            id:
+              type: integer
+            user_id:
+              type: integer
+            recording_id:
+              type: integer
+            symbol_id:
+              type: integer
+      Formula:
+        description: A formula. This can also be a single symbol.
+        item:
+          type: object
+          properties:
+            id:
+              type: integer
+            tags:
+              type: array
+              description: List of tags
+              items:
+                type: Tag
+            name:
+              type: string
+              description: for example \alpha
+      Recording:
+        description: A recording of handwritten text
+        item:
+          type: object
+          properties:
+            accepted_formula:
+              type: Formula
+              description: The id of the accepted formula
+            data:
+              type: string
+              description: raw data
+      Tag:
+        description: A tag
+        item:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+              description: This is what gets displayed
+            description:
+              type: string
+      User:
+        description: A user
+        item:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: User identifier
+            display_name:
+              type: string
+              description: Name of the user
+            language:
+              type: string
+              description: Native language of the users
+            handedness:
+              type: string
+              description: Handedness of the user (left or right)

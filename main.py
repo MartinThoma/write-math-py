@@ -74,6 +74,7 @@ def create_recording():
         recording_id = int(recording_id)
         return 'edit recording with %i' % recording_id
 
+
 # User administration
 @app.route('/api/user', methods=['POST'])
 def user_create():
