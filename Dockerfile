@@ -1,7 +1,7 @@
 FROM python
 MAINTAINER Martin Thoma <info@martin-thoma.de>
 
-RUN git clone https://github.com/MartinThoma/write-math-py.git
+ADD . /write-math-py
 RUN pip install -r /write-math-py/requirements.txt
 
 EXPOSE 5000
