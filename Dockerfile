@@ -1,11 +1,8 @@
 FROM python
 MAINTAINER Martin Thoma <info@martin-thoma.de>
 
-RUN cd /
 RUN git clone https://github.com/MartinThoma/write-math-py.git
-RUN cd write-math-py
-RUN pip install -r requirements.txt
-env PATH /write-math-py:$PATH
+RUN pip install -r /write-math-py/requirements.txt
 
 EXPOSE 5000
 
