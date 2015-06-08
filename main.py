@@ -14,6 +14,7 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 from flask import render_template
+from flask import send_from_directory
 from werkzeug.exceptions import default_exceptions
 from werkzeug.exceptions import HTTPException
 from utils.misc import json_response
@@ -51,6 +52,16 @@ app = make_json_app(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/docs/')
+def send_js_nopath():
+    return send_from_directory('docs', 'index.html')
+
+
+@app.route('/docs/<path:path>')
+def send_js(path):
+    return send_from_directory('docs', path)
 
 
 @app.route('/api/classification/<int:recording_id>', methods=['GET'])
