@@ -1,4 +1,4 @@
 make:
-	apidoc -i source.yml -o output/index.html
+	apidoc -i source.yml -o ../docs/index.html
 clean:
-	rm -rf output/
+	rm -rf ../docs
