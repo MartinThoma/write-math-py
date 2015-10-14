@@ -1,6 +1,6 @@
 configuration:
-  title: ApiDoc demo
-  description: A sample demo for ApiDoc
+  title: REST API documentation of write-math
+  description: This is the REST API documentation of write-math.com
   uri: http://api.write-math.com
 categories:
   Users:
@@ -51,7 +51,7 @@ versions:
                 type: reference
                 reference: object_href
       AddClassification:
-        label: ClassificationAdd
+        label: AddClassification
         method: POST
         description: Add a classification to a recording.
         uri: /{version}/recordings/{recording_id}/classification
@@ -81,10 +81,62 @@ versions:
         response_codes:
           - code: 404
             message: User not found
-            description: Customer does not exists
+            description: User does not exists
           - code: 403
             message: Forbidden
-            description: User can not be adding to this customer
+            description: Classification cannot be added by this user
+      AcceptClassification:
+        label: Accept
+        method: PUT
+        description: Accept a classification as being correct.
+        uri: /{version}/classification/{classification_id}/
+        category: Classification
+        request_parameters:
+          version:
+            type: Version
+            description: Api version
+            generic: true
+          classification_id:
+            type: integer
+            description: ID of the classification
+          access_token:
+            type: string
+            description: O-Auth access token which identifies and authenticates the user
+        response_body:
+          type: object
+          properties:
+            Classification:
+              type: Classification
+        response_codes:
+          - code: 403
+            message: Forbidden
+            description: Classification cannot be added by this user
+      DeleteClassification:
+        label: Delete
+        method: DELETE
+        description: Delete a classification.
+        uri: /{version}/classification/{classification_id}/
+        category: Classification
+        request_parameters:
+          version:
+            type: Version
+            description: Api version
+            generic: true
+          classification_id:
+            type: integer
+            description: ID of the classification
+          access_token:
+            type: string
+            description: O-Auth access token which identifies and authenticates the user
+        response_body:
+          type: object
+          properties:
+            Classification:
+              type: Classification
+        response_codes:
+          - code: 403
+            message: Forbidden
+            description: Classification cannot be deleted by this user
       UsersList:
         label: List
         uri: /{version}/users
@@ -103,6 +155,26 @@ versions:
               items:
                 type: reference
                 reference: object_href
+      UsersRanking:
+        label: ListRanking
+        uri: /{version}/users/ranking
+        description: List top 500 users by the number of recordings they contributed
+        category: Users
+        request_parameters:
+          version:
+            type: Version
+            description: Api version
+            generic: true
+        response_body:
+          type: object
+          properties:
+            Users:
+              type: array
+              items:
+                type: reference
+                reference: object_href
+            CacheDate:
+              type: string
       UserGet:
         label: Get
         description: Retrieve properties of a specific user

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ApiDoc demo</title>
+<title>REST API documentation of write-math</title>
     
 <link href="./css/combined.css" rel="stylesheet">
 <script type="text/javascript" src="./js/combined.js"></script>
@@ -12,8 +12,8 @@
 <body>
     <div class="jumbotron">
     <div class="container">
-        <h1>ApiDoc demo</h1><p>
-        A sample demo for ApiDoc
+        <h1>REST API documentation of write-math</h1><p>
+        This is the REST API documentation of write-math.com
         </p></div>
 </div><div id="help-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -60,13 +60,17 @@
             <div class="doc-sidebar"><input type="search" placeholder="search" class="col-md-12 form-control">
 <div class="scroll-spyable">
     <ul class="nav nav-list doc-sidenav">
-        <li class="nav-header"><h5>Methods</h5></li><li class="nav-header" data-group="Recordings"><a href="javascript:navigateTo({category: 'Recordings'}, ['category', 'method', 'type'])" data-target="#c-Recordings"><h6>Recordings</h6></a></li>
-        <li data-group="Recordings"  data-item="ClassificationAdd"><a href="javascript:navigateTo({category: 'Recordings', method: 'AddClassification'}, ['category', 'method'])" data-target="#m-AddClassification"><span>ClassificationAdd</span></a></li>
+        <li class="nav-header"><h5>Methods</h5></li><li class="nav-header" data-group="Classification"><a href="javascript:navigateTo({category: 'Classification'}, ['category', 'method', 'type'])" data-target="#c-Classification"><h6>Classification</h6></a></li>
+        <li data-group="Classification"  data-item="Accept"><a href="javascript:navigateTo({category: 'Classification', method: 'AcceptClassification'}, ['category', 'method'])" data-target="#m-AcceptClassification"><span>Accept</span></a></li>
+        <li data-group="Classification"  data-item="Delete"><a href="javascript:navigateTo({category: 'Classification', method: 'DeleteClassification'}, ['category', 'method'])" data-target="#m-DeleteClassification"><span>Delete</span></a></li>
+        <li class="separator"></li><li class="nav-header" data-group="Recordings"><a href="javascript:navigateTo({category: 'Recordings'}, ['category', 'method', 'type'])" data-target="#c-Recordings"><h6>Recordings</h6></a></li>
+        <li data-group="Recordings"  data-item="AddClassification"><a href="javascript:navigateTo({category: 'Recordings', method: 'AddClassification'}, ['category', 'method'])" data-target="#m-AddClassification"><span>AddClassification</span></a></li>
         <li data-group="Recordings"  data-item="Create"><a href="javascript:navigateTo({category: 'Recordings', method: 'RecordingCreate'}, ['category', 'method'])" data-target="#m-RecordingCreate"><span>Create</span></a></li>
         <li data-group="Recordings"  data-item="List"><a href="javascript:navigateTo({category: 'Recordings', method: 'RecordingsList'}, ['category', 'method'])" data-target="#m-RecordingsList"><span>List</span></a></li>
         <li class="separator"></li><li class="nav-header" data-group="Users"><a href="javascript:navigateTo({category: 'Users'}, ['category', 'method', 'type'])" data-target="#c-Users"><h6>Users</h6></a></li>
         <li data-group="Users"  data-item="Get"><a href="javascript:navigateTo({category: 'Users', method: 'UserGet'}, ['category', 'method'])" data-target="#m-UserGet"><span>Get</span></a></li>
         <li data-group="Users"  data-item="List"><a href="javascript:navigateTo({category: 'Users', method: 'UsersList'}, ['category', 'method'])" data-target="#m-UsersList"><span>List</span></a></li>
+        <li data-group="Users"  data-item="ListRanking"><a href="javascript:navigateTo({category: 'Users', method: 'UsersRanking'}, ['category', 'method'])" data-target="#m-UsersRanking"><span>ListRanking</span></a></li>
     </ul>
     <ul class="nav nav-list doc-sidenav">
         <li class="nav-header"><h5>Types</h5></li>
@@ -92,10 +96,310 @@
                 <h2>Methods</h2>
             </div>
             <ul class="list-unstyled">
+    <li class="category" id="c-Classification"><h3>Classification</h3>
+        <ul class="list-unstyled">
+            <li class="method item" id="m-AcceptClassification" data-method="PUT">
+                <h4>Accept</h4><div class="nocontents">no implementation for this version</div>
+                <div class="contents">
+
+<h5 class="title"></h5>
+
+<div class="description stack">
+    
+    <div class="diff_version" data-version="v1.0">Accept a classification as being correct.</div></div><div class="request stack">
+    <h5><i class="i-request"></i> Request: </h5>
+    <h6>Resource: </h6>
+
+    <code  class="diff_version" data-version="v1.0"><span class="hur">http://api.write-math.com/{version}/classification/{classification_id}/</span></code>
+    <h6>URI Parameters: </h6><table class="table table-bordered table-hover table-condensed">
+        <colgroup>
+            <col></col>
+            <col width="160px"></col>
+            <col width="70px"></col>
+            <col width="50%"></col>
+        </colgroup>
+        <thead>
+            <tr>
+            <th><span
+            >Parameter</span></th>
+            <th><span
+            >Type</span></th>
+            <th><span
+            >Optional</span></th>
+            <th><span
+            >Description</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="diff_version generic" data-version="v1.0">
+            <td><span class="str">version</span></td>
+            <td><span class="typ">
+                    <a href="javascript:navigateTo({type: 'Version'}, ['category', 'method'])">Version</a><td><span class="lit"></span></td>
+            <td><span class="com">Api version</span></td>
+        </tr>
+        <tr class="diff_version " data-version="v1.0">
+            <td><span class="str">classification_id</span></td>
+            <td><span class="typ">integer<td><span class="lit"></span></td>
+            <td><span class="com">ID of the classification</span></td>
+        </tr>
+        </tbody>
+    </table>
+    <h6>Query String Parameters: </h6><table class="table table-bordered table-hover table-condensed">
+        <colgroup>
+            <col></col>
+            <col width="160px"></col>
+            <col width="70px"></col>
+            <col width="50%"></col>
+        </colgroup>
+        <thead>
+            <tr>
+            <th><span
+            >Parameter</span></th>
+            <th><span
+            >Type</span></th>
+            <th><span
+            >Optional</span></th>
+            <th><span
+            >Description</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="diff_version " data-version="v1.0">
+            <td><span class="str">access_token</span></td>
+            <td><span class="typ">string<td><span class="lit"></span></td>
+            <td><span class="com">O-Auth access token which identifies and authenticates the user</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="response stack">
+    <h5><i class="i-response"></i> Response: </h5>
+    <h6>Body: </h6>
+    <div class="code"><table class="table-hover">
+        <colgroup>
+            <col width="50%%"></col>
+            <col width="50%%"></col>
+        </colgroup>
+        <tbody>
+
+    <tr class="diff_version" data-version="v1.0">
+        <td><span class="pun">{</span></td>
+        <td class="com"></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>  <span class="str">"Classification"</span><span class="pun">: </span><span class="typ"><a href="javascript:navigateTo({type: 'Classification'}, ['category', 'method'])">Classification</a></span></td>
+        <td class="com"></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td><span class="pun">}</span></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table></div>
+    <h6>Codes: </h6><table class="table table-bordered table-hover table-condensed">
+        <colgroup>
+            <col width="50px"></col>
+            <col></col>
+            <col width="50%"></col>
+        </colgroup>
+        <thead>
+            <tr>
+            <th><span
+            >Code</span></th>
+            <th><span
+            >Message</span></th>
+            <th><span
+            >Description</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="diff_version " data-version="v1.0">
+            <td><span class="lit">403</span></td>
+            <td><span class="str">Forbidden</span></td>
+            <td><span class="com">Classification cannot be added by this user</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div><div class="stack sample"><div data-version="v1.0">
+
+<h5><i class="i-sample"></i> Sample: </h5>
+<h6>Request: </h6>
+<div class="code"><span class="hme">PUT</span> <span class="hur">/v1.0/classification/42/?access_token=my_access_token</span> <span class="hpr">HTTP/1.1</span>
+<span class="hat">Content-Type</span><span class="pun">: </span><span class="hva">application/json; charset=utf-8</span>
+
+</div>
+        <h6>Response: </h6>
+        <div class="code"><span class="hpr">HTTP/1.1</span> <span class="lit">200</span> <span class="str">OK</span>
+<span class="hat">Content-Type</span><span class="pun">: </span><span class="hva">application/json; charset=utf-8</span>
+
+<span class="pun">{
+</span>  <span class="str">"Classification"</span><span class="pun">: </span><span class="pun">{
+</span>    <span class="str">"id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
+</span>    <span class="str">"recording_id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
+</span>    <span class="str">"symbol_id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
+</span>    <span class="str">"user_id"</span><span class="pun">: </span><span class="lit">42</span>
+  <span class="pun">}</span>
+<span class="pun">}</span></div></div></div>
+                </div>
+            </li>
+            <li class="method item" id="m-DeleteClassification" data-method="DELETE">
+                <h4>Delete</h4><div class="nocontents">no implementation for this version</div>
+                <div class="contents">
+
+<h5 class="title"></h5>
+
+<div class="description stack">
+    
+    <div class="diff_version" data-version="v1.0">Delete a classification.</div></div><div class="request stack">
+    <h5><i class="i-request"></i> Request: </h5>
+    <h6>Resource: </h6>
+
+    <code  class="diff_version" data-version="v1.0"><span class="hur">http://api.write-math.com/{version}/classification/{classification_id}/</span></code>
+    <h6>URI Parameters: </h6><table class="table table-bordered table-hover table-condensed">
+        <colgroup>
+            <col></col>
+            <col width="160px"></col>
+            <col width="70px"></col>
+            <col width="50%"></col>
+        </colgroup>
+        <thead>
+            <tr>
+            <th><span
+            >Parameter</span></th>
+            <th><span
+            >Type</span></th>
+            <th><span
+            >Optional</span></th>
+            <th><span
+            >Description</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="diff_version generic" data-version="v1.0">
+            <td><span class="str">version</span></td>
+            <td><span class="typ">
+                    <a href="javascript:navigateTo({type: 'Version'}, ['category', 'method'])">Version</a><td><span class="lit"></span></td>
+            <td><span class="com">Api version</span></td>
+        </tr>
+        <tr class="diff_version " data-version="v1.0">
+            <td><span class="str">classification_id</span></td>
+            <td><span class="typ">integer<td><span class="lit"></span></td>
+            <td><span class="com">ID of the classification</span></td>
+        </tr>
+        </tbody>
+    </table>
+    <h6>Query String Parameters: </h6><table class="table table-bordered table-hover table-condensed">
+        <colgroup>
+            <col></col>
+            <col width="160px"></col>
+            <col width="70px"></col>
+            <col width="50%"></col>
+        </colgroup>
+        <thead>
+            <tr>
+            <th><span
+            >Parameter</span></th>
+            <th><span
+            >Type</span></th>
+            <th><span
+            >Optional</span></th>
+            <th><span
+            >Description</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="diff_version " data-version="v1.0">
+            <td><span class="str">access_token</span></td>
+            <td><span class="typ">string<td><span class="lit"></span></td>
+            <td><span class="com">O-Auth access token which identifies and authenticates the user</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="response stack">
+    <h5><i class="i-response"></i> Response: </h5>
+    <h6>Body: </h6>
+    <div class="code"><table class="table-hover">
+        <colgroup>
+            <col width="50%%"></col>
+            <col width="50%%"></col>
+        </colgroup>
+        <tbody>
+
+    <tr class="diff_version" data-version="v1.0">
+        <td><span class="pun">{</span></td>
+        <td class="com"></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>  <span class="str">"Classification"</span><span class="pun">: </span><span class="typ"><a href="javascript:navigateTo({type: 'Classification'}, ['category', 'method'])">Classification</a></span></td>
+        <td class="com"></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td><span class="pun">}</span></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table></div>
+    <h6>Codes: </h6><table class="table table-bordered table-hover table-condensed">
+        <colgroup>
+            <col width="50px"></col>
+            <col></col>
+            <col width="50%"></col>
+        </colgroup>
+        <thead>
+            <tr>
+            <th><span
+            >Code</span></th>
+            <th><span
+            >Message</span></th>
+            <th><span
+            >Description</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="diff_version " data-version="v1.0">
+            <td><span class="lit">403</span></td>
+            <td><span class="str">Forbidden</span></td>
+            <td><span class="com">Classification cannot be deleted by this user</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div><div class="stack sample"><div data-version="v1.0">
+
+<h5><i class="i-sample"></i> Sample: </h5>
+<h6>Request: </h6>
+<div class="code"><span class="hme">DELETE</span> <span class="hur">/v1.0/classification/42/?access_token=my_access_token</span> <span class="hpr">HTTP/1.1</span>
+<span class="hat">Content-Type</span><span class="pun">: </span><span class="hva">application/json; charset=utf-8</span>
+
+</div>
+        <h6>Response: </h6>
+        <div class="code"><span class="hpr">HTTP/1.1</span> <span class="lit">200</span> <span class="str">OK</span>
+<span class="hat">Content-Type</span><span class="pun">: </span><span class="hva">application/json; charset=utf-8</span>
+
+<span class="pun">{
+</span>  <span class="str">"Classification"</span><span class="pun">: </span><span class="pun">{
+</span>    <span class="str">"id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
+</span>    <span class="str">"recording_id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
+</span>    <span class="str">"symbol_id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
+</span>    <span class="str">"user_id"</span><span class="pun">: </span><span class="lit">42</span>
+  <span class="pun">}</span>
+<span class="pun">}</span></div></div></div>
+                </div>
+            </li>
+        </ul>
+    </li>
     <li class="category" id="c-Recordings"><h3>Recordings</h3>
         <ul class="list-unstyled">
             <li class="method item" id="m-AddClassification" data-method="POST">
-                <h4>ClassificationAdd</h4><div class="nocontents">no implementation for this version</div>
+                <h4>AddClassification</h4><div class="nocontents">no implementation for this version</div>
                 <div class="contents">
 
 <h5 class="title"></h5>
@@ -238,12 +542,12 @@
         <tr class="diff_version " data-version="v1.0">
             <td><span class="lit">403</span></td>
             <td><span class="str">Forbidden</span></td>
-            <td><span class="com">User can not be adding to this customer</span></td>
+            <td><span class="com">Classification cannot be added by this user</span></td>
         </tr>
         <tr class="diff_version " data-version="v1.0">
             <td><span class="lit">404</span></td>
             <td><span class="str">User not found</span></td>
-            <td><span class="com">Customer does not exists</span></td>
+            <td><span class="com">User does not exists</span></td>
         </tr>
         </tbody>
     </table>
@@ -748,6 +1052,125 @@
 <span class="hat">Content-Type</span><span class="pun">: </span><span class="hva">application/json; charset=utf-8</span>
 
 <span class="pun">{
+</span>  <span class="str">"Users"</span><span class="pun">: </span><span class="pun">[
+</span>    <span class="pun">{
+</span>      <span class="str">"id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
+</span>      <span class="str">"name"</span><span class="pun">: </span><span class="str">"my_name"</span>
+    <span class="pun">}</span><span class="pun">,
+</span>    <span class="pun">{
+</span>      <span class="str">"id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
+</span>      <span class="str">"name"</span><span class="pun">: </span><span class="str">"my_name"</span>
+    <span class="pun">}</span>
+  <span class="pun">]</span>
+<span class="pun">}</span></div></div></div>
+                </div>
+            </li>
+            <li class="method item" id="m-UsersRanking" data-method="GET">
+                <h4>ListRanking</h4><div class="nocontents">no implementation for this version</div>
+                <div class="contents">
+
+<h5 class="title"></h5>
+
+<div class="description stack">
+    
+    <div class="diff_version" data-version="v1.0">List top 500 users by the number of recordings they contributed</div></div><div class="request stack">
+    <h5><i class="i-request"></i> Request: </h5>
+    <h6>Resource: </h6>
+
+    <code  class="diff_version" data-version="v1.0"><span class="hur">http://api.write-math.com/{version}/users/ranking</span></code>
+    <h6>URI Parameters: </h6><table class="table table-bordered table-hover table-condensed">
+        <colgroup>
+            <col></col>
+            <col width="160px"></col>
+            <col width="70px"></col>
+            <col width="50%"></col>
+        </colgroup>
+        <thead>
+            <tr>
+            <th><span
+            >Parameter</span></th>
+            <th><span
+            >Type</span></th>
+            <th><span
+            >Optional</span></th>
+            <th><span
+            >Description</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="diff_version generic" data-version="v1.0">
+            <td><span class="str">version</span></td>
+            <td><span class="typ">
+                    <a href="javascript:navigateTo({type: 'Version'}, ['category', 'method'])">Version</a><td><span class="lit"></span></td>
+            <td><span class="com">Api version</span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="response stack">
+    <h5><i class="i-response"></i> Response: </h5>
+    <h6>Body: </h6>
+    <div class="code"><table class="table-hover">
+        <colgroup>
+            <col width="50%%"></col>
+            <col width="50%%"></col>
+        </colgroup>
+        <tbody>
+
+    <tr class="diff_version" data-version="v1.0">
+        <td><span class="pun">{</span></td>
+        <td class="com"></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>  <span class="str">"CacheDate"</span><span class="pun">: </span><span class="typ">string</span><span class="pun">,</span></td>
+        <td class="com"></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>  <span class="str">"Users"</span><span class="pun">: </span><span class="pun">[</span></td>
+        <td class="com"></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>    <span class="pun">{</span></td>
+        <td class="com"></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>      <span class="str">"id"</span><span class="pun">: </span><span class="typ">integer</span><span class="pun">,</span></td>
+        <td class="com">Object identifier</td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>      <span class="str">"name"</span><span class="pun">: </span><span class="typ">string</span></td>
+        <td class="com">Name of the object</td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>    <span class="pun">}</span></td>
+        <td></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td>  <span class="pun">]</span></td>
+        <td></td>
+    </tr>
+    <tr class="diff_version" data-version="v1.0">
+        <td><span class="pun">}</span></td>
+        <td></td>
+    </tr>
+        </tbody>
+    </table></div>
+</div><div class="stack sample"><div data-version="v1.0">
+
+<h5><i class="i-sample"></i> Sample: </h5>
+<h6>Request: </h6>
+<div class="code"><span class="hme">GET</span> <span class="hur">/v1.0/users/ranking</span> <span class="hpr">HTTP/1.1</span>
+<span class="hat">Content-Type</span><span class="pun">: </span><span class="hva">application/json; charset=utf-8</span>
+
+</div>
+        <h6>Response: </h6>
+        <div class="code"><span class="hpr">HTTP/1.1</span> <span class="lit">200</span> <span class="str">OK</span>
+<span class="hat">Content-Type</span><span class="pun">: </span><span class="hva">application/json; charset=utf-8</span>
+
+<span class="pun">{
+</span>  <span class="str">"CacheDate"</span><span class="pun">: </span><span class="str">"my_CacheDate"</span><span class="pun">,
 </span>  <span class="str">"Users"</span><span class="pun">: </span><span class="pun">[
 </span>    <span class="pun">{
 </span>      <span class="str">"id"</span><span class="pun">: </span><span class="lit">42</span><span class="pun">,
